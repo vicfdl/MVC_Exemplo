@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogadores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #000000;
+            color: white;
+        }
+        td {
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Informações dos Jogadores</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Camisa</th>
+                <th>Posição</th>
+                <th>Gols na Temporada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="jogador:${jogadores}">
+                <td th:text="${jogador.nome}"></td>
+                <td th:text="${jogador.numero}"></td>
+                <td th:text="${jogador.posicao}"></td>
+                <td th:text="${jogador.golsTemp}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
